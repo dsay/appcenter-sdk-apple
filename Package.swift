@@ -74,6 +74,7 @@ let package = Package(
             name: "AppCenter",
             path: "AppCenter/AppCenter",
             exclude: ["Support"],
+            resources: [.copy("PrivacyInfo.xcprivacy")],
             cSettings: {
                 var settings: [CSetting] = [
                     .define("APP_CENTER_C_VERSION", to:"\"5.0.2\""),
@@ -97,6 +98,7 @@ let package = Package(
             dependencies: ["AppCenter"],
             path: "AppCenterAnalytics/AppCenterAnalytics",
             exclude: ["Support"],
+            resources: [.copy("PrivacyInfo.xcprivacy")],
             cSettings: cHeaderSearchPaths,
             linkerSettings: [
                 .linkedFramework("Foundation"),
@@ -109,6 +111,7 @@ let package = Package(
             dependencies: ["AppCenter", "CrashReporter"],
             path: "AppCenterCrashes/AppCenterCrashes",
             exclude: ["Support"],
+            resources: [.copy("PrivacyInfo.xcprivacy")],
             cSettings: cHeaderSearchPaths,
             linkerSettings: [
                 .linkedFramework("Foundation"),
